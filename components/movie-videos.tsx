@@ -1,11 +1,11 @@
 import React from "react";
 
 import styles from "../styles/movie-videos.module.css";
+import { API_URL } from "../app/constant";
 
 async function getVideos(id: string) {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   //throw new Error("something goes wrong");
-  const API_URL = `https://nomad-movies.nomadcoders.workers.dev/movies`;
   const response = await fetch(`${API_URL}/${id}/videos`);
   return response.json();
 }
